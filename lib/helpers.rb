@@ -24,3 +24,8 @@ end
 def js(filename)
   relative_path_to("/js/#{filename}")
 end
+
+def lorem(words)
+  require 'lorem'
+  Lorem::Base.new('words', words.class.to_s == "Range" ? (words).to_a.shuffle.first : words).output
+end
